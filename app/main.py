@@ -4,8 +4,11 @@ from flask import Flask, jsonify
 app = Flask(__name__)
  
 # Credencial injetada via variável de ambiente (NUNCA hardcoded)
-NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
- 
+# NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
+
+# Credencial Hardcoded para simular o erro: 
+NASA_API_KEY = "nasa-secret-token-abc123XYZ"
+
 @app.route("/health")
 def health():
     return jsonify({"status": "ok", "service": "Space Debris Monitor"})
