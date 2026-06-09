@@ -6,7 +6,7 @@ NASA_API_KEY = "nasa-secret-token-abc123XYZ"
 app = Flask(__name__)
  
 # Credencial injetada via variável de ambiente (NUNCA hardcoded)
-NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
+# NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
 
 @app.route("/health")
 def health():
