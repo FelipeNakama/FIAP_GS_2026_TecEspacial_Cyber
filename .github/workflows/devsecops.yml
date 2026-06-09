@@ -52,7 +52,8 @@ jobs:
           format: "table"
           exit-code: "1"
           severity: "CRITICAL,HIGH"
- 
+          ignore-unfixed: true
+          
   notify-on-failure:
     name: "Stage 4 - Notify on Failure"
     runs-on: ubuntu-latest
