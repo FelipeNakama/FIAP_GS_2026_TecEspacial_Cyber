@@ -11,7 +11,7 @@ permissions:
  
 jobs:
   secret-scan:
-    name: "Stage 1 - Secret Scan (truffleHog)"
+    name: "Stage 1 - Secret Scan"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
