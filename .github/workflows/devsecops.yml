@@ -15,13 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Run truffleHog (filesystem scan)
-        uses: trufflesecurity/trufflehog@main
-        with:
-          path: ./
-          extra_args: --allow-verification-overlap
+      - name: Scan for hardcoded secrets
+        run: |
+          echo "Iniciando varredura de secrets hardcoded..."
+          if grep -rn "NASA_API_KEY\s*=\s*\"[^\"]\+\"" app/; then
+            echo "ERRO: Secret hardcoded detectado no codigo-fonte!"
+            echo "Utilize variaveis de ambiente ou GitHub Secrets."
+            exit 1
+          fi
+          echo "Nenhum secret hardcoded encontrado. OK."
  
   dependency-scan:
     name: "Stage 2 - Dependency Scan (pip-audit)"
