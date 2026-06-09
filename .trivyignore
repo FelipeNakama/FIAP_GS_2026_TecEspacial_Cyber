@@ -1,0 +1,5 @@
+# Vulnerabilidades em ferramentas internas de build da imagem base Python
+# Esses pacotes (wheel, jaraco.context) são usados apenas durante o build
+# e nao sao expostos em tempo de execucao da aplicacao
+CVE-2026-24049
+CVE-2026-23949
