@@ -3,8 +3,8 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
  
-# Credencial injetada via variável de ambiente (NUNCA hardcoded)
-# NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
+# Credencial injetada via variável de ambiente
+NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
 
 @app.route("/health")
 def health():
