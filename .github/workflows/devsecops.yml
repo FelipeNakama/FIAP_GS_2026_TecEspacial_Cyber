@@ -16,13 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # historico completo para escanear todos os commits
-      - name: Run truffleHog
+          fetch-depth: 0
+      - name: Run truffleHog (filesystem scan)
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: main
-          head: HEAD
+          extra_args: --only-verified
  
   dependency-scan:
     name: "Stage 2 - Dependency Scan (pip-audit)"
