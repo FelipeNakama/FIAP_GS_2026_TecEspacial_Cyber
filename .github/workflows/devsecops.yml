@@ -21,7 +21,7 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          extra_args: --only-verified
+          extra_args: --allow-verification-overlap
  
   dependency-scan:
     name: "Stage 2 - Dependency Scan (pip-audit)"
