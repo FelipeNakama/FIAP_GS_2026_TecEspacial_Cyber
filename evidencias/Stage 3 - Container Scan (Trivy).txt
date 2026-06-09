@@ -1,0 +1,534 @@
+﻿2026-06-09T20:51:58.4904907Z Current runner version: '2.334.0'
+2026-06-09T20:51:58.4929320Z ##[group]Runner Image Provisioner
+2026-06-09T20:51:58.4930300Z Hosted Compute Agent
+2026-06-09T20:51:58.4930891Z Version: 20260520.533
+2026-06-09T20:51:58.4931574Z Commit: 189110e25284a9812c124fd27b339e2fb4f2f9db
+2026-06-09T20:51:58.4932308Z Build Date: 2026-05-20T17:44:04Z
+2026-06-09T20:51:58.4933057Z Worker ID: {ef7e826a-fedd-4605-ac25-eebfaf804a5f}
+2026-06-09T20:51:58.4933816Z Azure Region: westus
+2026-06-09T20:51:58.4934366Z ##[endgroup]
+2026-06-09T20:51:58.4935733Z ##[group]Operating System
+2026-06-09T20:51:58.4936781Z Ubuntu
+2026-06-09T20:51:58.4937368Z 24.04.4
+2026-06-09T20:51:58.4937900Z LTS
+2026-06-09T20:51:58.4938415Z ##[endgroup]
+2026-06-09T20:51:58.4938979Z ##[group]Runner Image
+2026-06-09T20:51:58.4939674Z Image: ubuntu-24.04
+2026-06-09T20:51:58.4940322Z Version: 20260525.161.1
+2026-06-09T20:51:58.4941602Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260525.161/images/ubuntu/Ubuntu2404-Readme.md
+2026-06-09T20:51:58.4943141Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260525.161
+2026-06-09T20:51:58.4944167Z ##[endgroup]
+2026-06-09T20:51:58.4945283Z ##[group]GITHUB_TOKEN Permissions
+2026-06-09T20:51:58.4947382Z Contents: read
+2026-06-09T20:51:58.4947994Z Metadata: read
+2026-06-09T20:51:58.4948534Z ##[endgroup]
+2026-06-09T20:51:58.4950808Z Secret source: Actions
+2026-06-09T20:51:58.4951650Z Prepare workflow directory
+2026-06-09T20:51:58.5280134Z Prepare all required actions
+2026-06-09T20:51:58.5318362Z Getting action download info
+2026-06-09T20:51:59.0603957Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-06-09T20:51:59.1818091Z Download action repository 'aquasecurity/trivy-action@master' (SHA:bfa4b33a029b9aa80ddb784b45574c30e072c59e)
+2026-06-09T20:51:59.6834454Z Getting action download info
+2026-06-09T20:51:59.9076739Z Download action repository 'aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514' (SHA:3fb12ec12f41e471780db15c232d5dd185dcb514)
+2026-06-09T20:52:00.1673854Z Download action repository 'actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae' (SHA:27d5ce7f107fe9357f9df03efb73ab90386fccae)
+2026-06-09T20:52:00.2802112Z Getting action download info
+2026-06-09T20:52:00.4974466Z Download action repository 'actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+2026-06-09T20:52:00.6973457Z Download action repository 'actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2026-06-09T20:52:00.8765324Z Complete job name: Stage 3 - Container Scan (Trivy)
+2026-06-09T20:52:00.9649341Z ##[group]Run actions/checkout@v4
+2026-06-09T20:52:00.9650793Z with:
+2026-06-09T20:52:00.9651782Z   repository: FelipeNakama/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:00.9662221Z   token: ***
+2026-06-09T20:52:00.9663054Z   ssh-strict: true
+2026-06-09T20:52:00.9663884Z   ssh-user: git
+2026-06-09T20:52:00.9664729Z   persist-credentials: true
+2026-06-09T20:52:00.9665655Z   clean: true
+2026-06-09T20:52:00.9666788Z   sparse-checkout-cone-mode: true
+2026-06-09T20:52:00.9667776Z   fetch-depth: 1
+2026-06-09T20:52:00.9668594Z   fetch-tags: false
+2026-06-09T20:52:00.9669434Z   show-progress: true
+2026-06-09T20:52:00.9670263Z   lfs: false
+2026-06-09T20:52:00.9671056Z   submodules: false
+2026-06-09T20:52:00.9671905Z   set-safe-directory: true
+2026-06-09T20:52:00.9673138Z ##[endgroup]
+2026-06-09T20:52:01.0832106Z Syncing repository: FelipeNakama/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:01.0836912Z ##[group]Getting Git version info
+2026-06-09T20:52:01.0839456Z Working directory is '/home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber'
+2026-06-09T20:52:01.0841747Z [command]/usr/bin/git version
+2026-06-09T20:52:01.0926808Z git version 2.54.0
+2026-06-09T20:52:01.0954431Z ##[endgroup]
+2026-06-09T20:52:01.0970985Z Temporarily overriding HOME='/home/runner/work/_temp/bb95af68-d4ab-4517-b6ce-ae313ebc5131' before making global git config changes
+2026-06-09T20:52:01.0975553Z Adding repository directory to the temporary git global config as a safe directory
+2026-06-09T20:52:01.0986774Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:01.1035703Z Deleting the contents of '/home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber'
+2026-06-09T20:52:01.1040686Z ##[group]Initializing the repository
+2026-06-09T20:52:01.1044358Z [command]/usr/bin/git init /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:01.1150753Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-06-09T20:52:01.1152558Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-06-09T20:52:01.1154193Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-06-09T20:52:01.1156157Z hint: call:
+2026-06-09T20:52:01.1157640Z hint:
+2026-06-09T20:52:01.1159462Z hint: 	git config --global init.defaultBranch <name>
+2026-06-09T20:52:01.1161412Z hint:
+2026-06-09T20:52:01.1163343Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-06-09T20:52:01.1166220Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-06-09T20:52:01.1168949Z hint:
+2026-06-09T20:52:01.1170368Z hint: 	git branch -m <name>
+2026-06-09T20:52:01.1171901Z hint:
+2026-06-09T20:52:01.1173868Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-06-09T20:52:01.1177406Z Initialized empty Git repository in /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber/.git/
+2026-06-09T20:52:01.1181568Z [command]/usr/bin/git remote add origin https://github.com/FelipeNakama/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:01.1214230Z ##[endgroup]
+2026-06-09T20:52:01.1217011Z ##[group]Disabling automatic garbage collection
+2026-06-09T20:52:01.1219327Z [command]/usr/bin/git config --local gc.auto 0
+2026-06-09T20:52:01.1248273Z ##[endgroup]
+2026-06-09T20:52:01.1250639Z ##[group]Setting up auth
+2026-06-09T20:52:01.1255025Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-06-09T20:52:01.1292031Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-06-09T20:52:01.1642742Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-06-09T20:52:01.1671319Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-06-09T20:52:01.1884239Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-06-09T20:52:01.1913144Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-06-09T20:52:01.2137282Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-06-09T20:52:01.2171239Z ##[endgroup]
+2026-06-09T20:52:01.2172714Z ##[group]Fetching the repository
+2026-06-09T20:52:01.2179854Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +aa78f114567111e51cd0cad20cc1833f1a30497a:refs/remotes/origin/main
+2026-06-09T20:52:01.8399811Z From https://github.com/FelipeNakama/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:01.8402773Z  * [new ref]         aa78f114567111e51cd0cad20cc1833f1a30497a -> origin/main
+2026-06-09T20:52:01.8440288Z ##[endgroup]
+2026-06-09T20:52:01.8442690Z ##[group]Determining the checkout info
+2026-06-09T20:52:01.8445229Z ##[endgroup]
+2026-06-09T20:52:01.8448119Z [command]/usr/bin/git sparse-checkout disable
+2026-06-09T20:52:01.8493034Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-06-09T20:52:01.8519228Z ##[group]Checking out the ref
+2026-06-09T20:52:01.8522341Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-06-09T20:52:01.8613647Z Switched to a new branch 'main'
+2026-06-09T20:52:01.8617196Z branch 'main' set up to track 'origin/main'.
+2026-06-09T20:52:01.8625521Z ##[endgroup]
+2026-06-09T20:52:01.8661483Z [command]/usr/bin/git log -1 --format=%H
+2026-06-09T20:52:01.8683112Z aa78f114567111e51cd0cad20cc1833f1a30497a
+2026-06-09T20:52:01.8905039Z ##[group]Run docker build -t space-debris:latest .
+2026-06-09T20:52:01.8906649Z [36;1mdocker build -t space-debris:latest .[0m
+2026-06-09T20:52:01.8940407Z shell: /usr/bin/bash -e {0}
+2026-06-09T20:52:01.8941339Z ##[endgroup]
+2026-06-09T20:52:02.4868885Z #0 building with "default" instance using docker driver
+2026-06-09T20:52:02.4869370Z 
+2026-06-09T20:52:02.4869742Z #1 [internal] load build definition from Dockerfile
+2026-06-09T20:52:02.4870593Z #1 transferring dockerfile: 187B done
+2026-06-09T20:52:02.4871044Z #1 DONE 0.0s
+2026-06-09T20:52:02.4871232Z 
+2026-06-09T20:52:02.4871570Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-06-09T20:52:02.7244152Z #2 ...
+2026-06-09T20:52:02.7244575Z 
+2026-06-09T20:52:02.7245027Z #3 [auth] library/python:pull token for registry-1.docker.io
+2026-06-09T20:52:02.8747230Z #3 DONE 0.0s
+2026-06-09T20:52:02.8747758Z 
+2026-06-09T20:52:02.8748041Z #2 [internal] load metadata for docker.io/library/python:3.12-slim
+2026-06-09T20:52:03.2228960Z #2 DONE 0.9s
+2026-06-09T20:52:03.3420577Z 
+2026-06-09T20:52:03.3420991Z #4 [internal] load .dockerignore
+2026-06-09T20:52:03.3421549Z #4 transferring context: 2B done
+2026-06-09T20:52:03.3421981Z #4 DONE 0.0s
+2026-06-09T20:52:03.3422177Z 
+2026-06-09T20:52:03.3422356Z #5 [internal] load build context
+2026-06-09T20:52:03.3422822Z #5 transferring context: 729B done
+2026-06-09T20:52:03.3423249Z #5 DONE 0.0s
+2026-06-09T20:52:03.3423435Z 
+2026-06-09T20:52:03.3424132Z #6 [1/5] FROM docker.io/library/python:3.12-slim@sha256:090ba77e2958f6af52a5341f788b50b032dd4ca28377d2893dcf1ecbdfdfe203
+2026-06-09T20:52:03.3425600Z #6 resolve docker.io/library/python:3.12-slim@sha256:090ba77e2958f6af52a5341f788b50b032dd4ca28377d2893dcf1ecbdfdfe203 done
+2026-06-09T20:52:03.3430415Z #6 sha256:4a9dde5cdde190bfa0a3ab17863a083e66ea9636b157638c315357dfa476ba76 0B / 1.29MB 0.1s
+2026-06-09T20:52:03.3433088Z #6 sha256:e113665b194b20ba7e9093ef6a1a38edbaebbfb983c00e379a45a142a95a86ef 0B / 12.11MB 0.1s
+2026-06-09T20:52:03.3435864Z #6 sha256:090ba77e2958f6af52a5341f788b50b032dd4ca28377d2893dcf1ecbdfdfe203 10.37kB / 10.37kB done
+2026-06-09T20:52:03.3437923Z #6 sha256:866411c135b507754efdf2fda51484be4d3d7d5173ed53cd083106132e710904 1.75kB / 1.75kB done
+2026-06-09T20:52:03.3439088Z #6 sha256:e1054bc5a9f2ddbdd6d0247997c45f2201a4e9b4c6f824b247064a558e877070 5.65kB / 5.65kB done
+2026-06-09T20:52:03.3440234Z #6 sha256:5b4d6ff92fc4e14e911b7753c954fac965d48c40fe1075758d284148ccace970 2.10MB / 29.78MB 0.1s
+2026-06-09T20:52:03.4422028Z #6 sha256:4a9dde5cdde190bfa0a3ab17863a083e66ea9636b157638c315357dfa476ba76 1.05MB / 1.29MB 0.2s
+2026-06-09T20:52:03.4423408Z #6 sha256:5b4d6ff92fc4e14e911b7753c954fac965d48c40fe1075758d284148ccace970 29.78MB / 29.78MB 0.2s
+2026-06-09T20:52:03.5868005Z #6 sha256:4a9dde5cdde190bfa0a3ab17863a083e66ea9636b157638c315357dfa476ba76 1.29MB / 1.29MB 0.2s done
+2026-06-09T20:52:03.5870329Z #6 sha256:e113665b194b20ba7e9093ef6a1a38edbaebbfb983c00e379a45a142a95a86ef 12.11MB / 12.11MB 0.3s done
+2026-06-09T20:52:03.5871586Z #6 sha256:5b4d6ff92fc4e14e911b7753c954fac965d48c40fe1075758d284148ccace970 29.78MB / 29.78MB 0.2s done
+2026-06-09T20:52:03.5872858Z #6 extracting sha256:5b4d6ff92fc4e14e911b7753c954fac965d48c40fe1075758d284148ccace970 0.1s
+2026-06-09T20:52:03.5874312Z #6 sha256:07342fe545e640a2c4960e97ffe33a301cd8e61e0c4d4307d7ac66b6b8a9eb2d 250B / 250B 0.3s done
+2026-06-09T20:52:04.4687467Z #6 extracting sha256:5b4d6ff92fc4e14e911b7753c954fac965d48c40fe1075758d284148ccace970 1.0s done
+2026-06-09T20:52:04.4689014Z #6 extracting sha256:4a9dde5cdde190bfa0a3ab17863a083e66ea9636b157638c315357dfa476ba76
+2026-06-09T20:52:04.6824210Z #6 extracting sha256:4a9dde5cdde190bfa0a3ab17863a083e66ea9636b157638c315357dfa476ba76 0.1s done
+2026-06-09T20:52:04.6825250Z #6 extracting sha256:e113665b194b20ba7e9093ef6a1a38edbaebbfb983c00e379a45a142a95a86ef
+2026-06-09T20:52:05.3187588Z #6 extracting sha256:e113665b194b20ba7e9093ef6a1a38edbaebbfb983c00e379a45a142a95a86ef 0.5s done
+2026-06-09T20:52:05.3189583Z #6 extracting sha256:07342fe545e640a2c4960e97ffe33a301cd8e61e0c4d4307d7ac66b6b8a9eb2d done
+2026-06-09T20:52:05.3190887Z #6 DONE 2.1s
+2026-06-09T20:52:05.3191321Z 
+2026-06-09T20:52:05.3191706Z #7 [2/5] WORKDIR /app
+2026-06-09T20:52:05.3192594Z #7 DONE 0.0s
+2026-06-09T20:52:05.4817286Z 
+2026-06-09T20:52:05.4817794Z #8 [3/5] COPY requirements.txt .
+2026-06-09T20:52:05.4818434Z #8 DONE 0.0s
+2026-06-09T20:52:05.4818647Z 
+2026-06-09T20:52:05.4818940Z #9 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+2026-06-09T20:52:06.7844376Z #9 1.453 Collecting requests==2.33.0 (from -r requirements.txt (line 1))
+2026-06-09T20:52:06.8997447Z #9 1.470   Downloading requests-2.33.0-py3-none-any.whl.metadata (5.1 kB)
+2026-06-09T20:52:06.8998418Z #9 1.568 Collecting astropy==5.3.4 (from -r requirements.txt (line 2))
+2026-06-09T20:52:07.0172254Z #9 1.573   Downloading astropy-5.3.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.4 kB)
+2026-06-09T20:52:07.0173135Z #9 1.686 Collecting pandas==2.2.3 (from -r requirements.txt (line 3))
+2026-06-09T20:52:07.1228341Z #9 1.690   Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (89 kB)
+2026-06-09T20:52:07.1229240Z #9 1.791 Collecting scikit-learn==1.5.0 (from -r requirements.txt (line 4))
+2026-06-09T20:52:07.2328973Z #9 1.801   Downloading scikit_learn-1.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2026-06-09T20:52:07.2330391Z #9 1.821 Collecting flask==3.1.3 (from -r requirements.txt (line 5))
+2026-06-09T20:52:07.2331412Z #9 1.824   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+2026-06-09T20:52:07.2332715Z #9 1.901 Collecting charset_normalizer<4,>=2 (from requests==2.33.0->-r requirements.txt (line 1))
+2026-06-09T20:52:07.4455522Z #9 1.905   Downloading charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+2026-06-09T20:52:07.4457114Z #9 1.918 Collecting idna<4,>=2.5 (from requests==2.33.0->-r requirements.txt (line 1))
+2026-06-09T20:52:07.4457965Z #9 1.920   Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+2026-06-09T20:52:07.4458835Z #9 1.943 Collecting urllib3<3,>=1.26 (from requests==2.33.0->-r requirements.txt (line 1))
+2026-06-09T20:52:07.4459648Z #9 1.946   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+2026-06-09T20:52:07.4460495Z #9 1.961 Collecting certifi>=2023.5.7 (from requests==2.33.0->-r requirements.txt (line 1))
+2026-06-09T20:52:07.4461334Z #9 1.964   Downloading certifi-2026.5.20-py3-none-any.whl.metadata (2.5 kB)
+2026-06-09T20:52:07.4544837Z #9 2.123 Collecting numpy<2,>=1.21 (from astropy==5.3.4->-r requirements.txt (line 2))
+2026-06-09T20:52:07.5548180Z #9 2.127   Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+2026-06-09T20:52:07.5549472Z #9 2.155 Collecting pyerfa>=2.0 (from astropy==5.3.4->-r requirements.txt (line 2))
+2026-06-09T20:52:07.5550676Z #9 2.160   Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.7 kB)
+2026-06-09T20:52:07.5551820Z #9 2.186 Collecting PyYAML>=3.13 (from astropy==5.3.4->-r requirements.txt (line 2))
+2026-06-09T20:52:07.5553110Z #9 2.189   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-06-09T20:52:07.5554496Z #9 2.202 Collecting packaging>=19.0 (from astropy==5.3.4->-r requirements.txt (line 2))
+2026-06-09T20:52:07.5555463Z #9 2.205   Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
+2026-06-09T20:52:07.5557392Z #9 2.221 Collecting python-dateutil>=2.8.2 (from pandas==2.2.3->-r requirements.txt (line 3))
+2026-06-09T20:52:07.5558512Z #9 2.223   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+2026-06-09T20:52:07.7088046Z #9 2.254 Collecting pytz>=2020.1 (from pandas==2.2.3->-r requirements.txt (line 3))
+2026-06-09T20:52:07.7088912Z #9 2.257   Downloading pytz-2026.2-py2.py3-none-any.whl.metadata (22 kB)
+2026-06-09T20:52:07.7090014Z #9 2.269 Collecting tzdata>=2022.7 (from pandas==2.2.3->-r requirements.txt (line 3))
+2026-06-09T20:52:07.7090908Z #9 2.272   Downloading tzdata-2026.2-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-06-09T20:52:07.7091847Z #9 2.377 Collecting scipy>=1.6.0 (from scikit-learn==1.5.0->-r requirements.txt (line 4))
+2026-06-09T20:52:07.8559195Z #9 2.380   Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+2026-06-09T20:52:07.8560606Z #9 2.409 Collecting joblib>=1.2.0 (from scikit-learn==1.5.0->-r requirements.txt (line 4))
+2026-06-09T20:52:07.8561753Z #9 2.412   Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+2026-06-09T20:52:07.8562912Z #9 2.418 Collecting threadpoolctl>=3.1.0 (from scikit-learn==1.5.0->-r requirements.txt (line 4))
+2026-06-09T20:52:07.8564102Z #9 2.421   Downloading threadpoolctl-3.6.0-py3-none-any.whl.metadata (13 kB)
+2026-06-09T20:52:07.8565162Z #9 2.428 Collecting blinker>=1.9.0 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:07.8566140Z #9 2.431   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+2026-06-09T20:52:07.8567416Z #9 2.444 Collecting click>=8.1.3 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:07.8568410Z #9 2.447   Downloading click-8.4.1-py3-none-any.whl.metadata (2.6 kB)
+2026-06-09T20:52:07.8569536Z #9 2.453 Collecting itsdangerous>=2.2.0 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:07.8570503Z #9 2.456   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+2026-06-09T20:52:07.8571477Z #9 2.466 Collecting jinja2>=3.1.2 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:07.8572438Z #9 2.469   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-06-09T20:52:07.8573335Z #9 2.524 Collecting markupsafe>=2.1.1 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:08.0187177Z #9 2.527   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-06-09T20:52:08.0190579Z #9 2.544 Collecting werkzeug>=3.1.0 (from flask==3.1.3->-r requirements.txt (line 5))
+2026-06-09T20:52:08.0191441Z #9 2.547   Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+2026-06-09T20:52:08.0192523Z #9 2.574 Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas==2.2.3->-r requirements.txt (line 3))
+2026-06-09T20:52:08.0193601Z #9 2.576   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-06-09T20:52:08.0194528Z #9 2.599 Downloading requests-2.33.0-py3-none-any.whl (65 kB)
+2026-06-09T20:52:08.0195550Z #9 2.603 Downloading astropy-5.3.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (10.3 MB)
+2026-06-09T20:52:08.1979362Z #9 2.687    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 134.9 MB/s eta 0:00:00
+2026-06-09T20:52:08.1980660Z #9 2.691 Downloading pandas-2.2.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (12.7 MB)
+2026-06-09T20:52:08.1982060Z #9 2.750    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.7/12.7 MB 226.4 MB/s eta 0:00:00
+2026-06-09T20:52:08.1983157Z #9 2.755 Downloading scikit_learn-1.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.1 MB)
+2026-06-09T20:52:08.3293233Z #9 2.866    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.1/13.1 MB 118.3 MB/s eta 0:00:00
+2026-06-09T20:52:08.3293855Z #9 2.870 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+2026-06-09T20:52:08.3294275Z #9 2.873 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2026-06-09T20:52:08.3294681Z #9 2.876 Downloading certifi-2026.5.20-py3-none-any.whl (134 kB)
+2026-06-09T20:52:08.3295638Z #9 2.879 Downloading charset_normalizer-3.4.7-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (216 kB)
+2026-06-09T20:52:08.3296263Z #9 2.883 Downloading click-8.4.1-py3-none-any.whl (116 kB)
+2026-06-09T20:52:08.3296951Z #9 2.886 Downloading idna-3.18-py3-none-any.whl (65 kB)
+2026-06-09T20:52:08.3297331Z #9 2.889 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2026-06-09T20:52:08.3298112Z #9 2.892 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-06-09T20:52:08.3298696Z #9 2.896 Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+2026-06-09T20:52:08.3299603Z #9 2.899 Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-06-09T20:52:08.3300751Z #9 2.909 Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
+2026-06-09T20:52:08.4430756Z #9 2.998    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 217.7 MB/s eta 0:00:00
+2026-06-09T20:52:08.4432065Z #9 3.002 Downloading packaging-26.2-py3-none-any.whl (100 kB)
+2026-06-09T20:52:08.4433343Z #9 3.008 Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (738 kB)
+2026-06-09T20:52:08.4434839Z #9 3.011    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 738.7/738.7 kB 798.9 MB/s eta 0:00:00
+2026-06-09T20:52:08.4435961Z #9 3.014 Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+2026-06-09T20:52:08.4437094Z #9 3.018 Downloading pytz-2026.2-py2.py3-none-any.whl (510 kB)
+2026-06-09T20:52:08.4438200Z #9 3.022 Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-06-09T20:52:08.4439314Z #9 3.025    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 765.4 MB/s eta 0:00:00
+2026-06-09T20:52:08.4439991Z #9 3.029 Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.2 MB)
+2026-06-09T20:52:08.6094193Z #9 3.111    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.2/35.2 MB 435.3 MB/s eta 0:00:00
+2026-06-09T20:52:08.6094827Z #9 3.115 Downloading threadpoolctl-3.6.0-py3-none-any.whl (18 kB)
+2026-06-09T20:52:08.6095350Z #9 3.118 Downloading tzdata-2026.2-py2.py3-none-any.whl (349 kB)
+2026-06-09T20:52:08.6096195Z #9 3.121 Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+2026-06-09T20:52:08.6097566Z #9 3.124 Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+2026-06-09T20:52:08.6098280Z #9 3.127 Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-06-09T20:52:08.6769143Z #9 3.345 Installing collected packages: pytz, urllib3, tzdata, threadpoolctl, six, PyYAML, packaging, numpy, markupsafe, joblib, itsdangerous, idna, click, charset_normalizer, certifi, blinker, werkzeug, scipy, requests, python-dateutil, pyerfa, jinja2, scikit-learn, pandas, flask, astropy
+2026-06-09T20:52:23.3270230Z #9 18.00 Successfully installed PyYAML-6.0.3 astropy-5.3.4 blinker-1.9.0 certifi-2026.5.20 charset_normalizer-3.4.7 click-8.4.1 flask-3.1.3 idna-3.18 itsdangerous-2.2.0 jinja2-3.1.6 joblib-1.5.3 markupsafe-3.0.3 numpy-1.26.4 packaging-26.2 pandas-2.2.3 pyerfa-2.0.1.5 python-dateutil-2.9.0.post0 pytz-2026.2 requests-2.33.0 scikit-learn-1.5.0 scipy-1.17.1 six-1.17.0 threadpoolctl-3.6.0 tzdata-2026.2 urllib3-2.7.0 werkzeug-3.1.8
+2026-06-09T20:52:23.5418707Z #9 18.00 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2026-06-09T20:52:23.5421129Z #9 18.06 
+2026-06-09T20:52:23.5429162Z #9 18.06 [notice] A new release of pip is available: 25.0.1 -> 26.1.2
+2026-06-09T20:52:23.5430280Z #9 18.06 [notice] To update, run: pip install --upgrade pip
+2026-06-09T20:52:24.1811232Z #9 DONE 18.8s
+2026-06-09T20:52:24.3452499Z 
+2026-06-09T20:52:24.3452978Z #10 [5/5] COPY app/ .
+2026-06-09T20:52:24.3454035Z #10 DONE 0.0s
+2026-06-09T20:52:24.3454231Z 
+2026-06-09T20:52:24.3454384Z #11 exporting to image
+2026-06-09T20:52:24.3454768Z #11 exporting layers
+2026-06-09T20:52:26.5561478Z #11 exporting layers 2.4s done
+2026-06-09T20:52:26.5740741Z #11 writing image sha256:f9a4a9195c130f154eecfb4a569987eadc45c3f19a9881ac03630ebffb19f9e5 done
+2026-06-09T20:52:26.5741621Z #11 naming to docker.io/library/space-debris:latest done
+2026-06-09T20:52:26.5742142Z #11 DONE 2.4s
+2026-06-09T20:52:26.6055236Z ##[group]Run aquasecurity/trivy-action@master
+2026-06-09T20:52:26.6055564Z with:
+2026-06-09T20:52:26.6055775Z   image-ref: space-debris:latest
+2026-06-09T20:52:26.6056033Z   format: table
+2026-06-09T20:52:26.6056232Z   exit-code: 1
+2026-06-09T20:52:26.6056666Z   severity: CRITICAL,HIGH
+2026-06-09T20:52:26.6056894Z   ignore-unfixed: true
+2026-06-09T20:52:26.6057108Z   scan-type: image
+2026-06-09T20:52:26.6057305Z   scan-ref: .
+2026-06-09T20:52:26.6057494Z   vuln-type: os,library
+2026-06-09T20:52:26.6057929Z   cache-dir: /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber/.cache/trivy
+2026-06-09T20:52:26.6058415Z   list-all-pkgs: false
+2026-06-09T20:52:26.6058626Z   version: v0.71.0
+2026-06-09T20:52:26.6058820Z   cache: true
+2026-06-09T20:52:26.6059014Z   skip-setup-trivy: false
+2026-06-09T20:52:26.6062102Z   token-setup-trivy: ***
+2026-06-09T20:52:26.6062344Z ##[endgroup]
+2026-06-09T20:52:26.6275449Z ##[group]Run aquasecurity/setup-trivy@3fb12ec12f41e471780db15c232d5dd185dcb514
+2026-06-09T20:52:26.6275847Z with:
+2026-06-09T20:52:26.6276034Z   version: v0.71.0
+2026-06-09T20:52:26.6276232Z   cache: true
+2026-06-09T20:52:26.6279460Z   token: ***
+2026-06-09T20:52:26.6279673Z   path: $HOME/.local/bin
+2026-06-09T20:52:26.6279939Z   github-server-url: https://github.com
+2026-06-09T20:52:26.6280224Z ##[endgroup]
+2026-06-09T20:52:26.6299463Z ##[group]Run echo "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT
+2026-06-09T20:52:26.6299950Z [36;1mecho "dir=$HOME/.local/bin/trivy-bin" >> $GITHUB_OUTPUT[0m
+2026-06-09T20:52:26.6327097Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:26.6327444Z ##[endgroup]
+2026-06-09T20:52:26.6453345Z ##[group]Run actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb
+2026-06-09T20:52:26.6453724Z with:
+2026-06-09T20:52:26.6453936Z   path: /home/runner/.local/bin/trivy-bin
+2026-06-09T20:52:26.6454223Z   key: trivy-binary-v0.71.0-Linux-X64
+2026-06-09T20:52:26.6454490Z   enableCrossOsArchive: false
+2026-06-09T20:52:26.6454747Z   fail-on-cache-miss: false
+2026-06-09T20:52:26.6454981Z   lookup-only: false
+2026-06-09T20:52:26.6455194Z ##[endgroup]
+2026-06-09T20:52:27.0810995Z Cache hit for: trivy-binary-v0.71.0-Linux-X64
+2026-06-09T20:52:28.3680822Z Received 0 of 46007925 (0.0%), 0.0 MBs/sec
+2026-06-09T20:52:28.9060753Z Received 46007925 of 46007925 (100.0%), 28.5 MBs/sec
+2026-06-09T20:52:28.9063403Z Cache Size: ~44 MB (46007925 B)
+2026-06-09T20:52:28.9108088Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9f322de0-ac2e-477a-be45-acbe6221641b/cache.tzst -P -C /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber --use-compress-program unzstd
+2026-06-09T20:52:29.1860261Z Cache restored successfully
+2026-06-09T20:52:29.1966744Z Cache restored from key: trivy-binary-v0.71.0-Linux-X64
+2026-06-09T20:52:29.2099878Z ##[group]Run echo /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH
+2026-06-09T20:52:29.2100378Z [36;1mecho /home/runner/.local/bin/trivy-bin >> $GITHUB_PATH[0m
+2026-06-09T20:52:29.2126601Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:29.2126970Z ##[endgroup]
+2026-06-09T20:52:29.2209181Z ##[group]Run echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+2026-06-09T20:52:29.2209596Z [36;1mecho "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT[0m
+2026-06-09T20:52:29.2234648Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:29.2235010Z ##[endgroup]
+2026-06-09T20:52:29.2331933Z ##[group]Run actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae
+2026-06-09T20:52:29.2332494Z with:
+2026-06-09T20:52:29.2332886Z   path: /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber/.cache/trivy
+2026-06-09T20:52:29.2333358Z   key: cache-trivy-2026-06-09
+2026-06-09T20:52:29.2333614Z   restore-keys: cache-trivy-
+2026-06-09T20:52:29.2333881Z   enableCrossOsArchive: false
+2026-06-09T20:52:29.2334134Z   fail-on-cache-miss: false
+2026-06-09T20:52:29.2334372Z   lookup-only: false
+2026-06-09T20:52:29.2334588Z   save-always: false
+2026-06-09T20:52:29.2334977Z ##[endgroup]
+2026-06-09T20:52:29.6266021Z Cache hit for: cache-trivy-2026-06-09
+2026-06-09T20:52:30.9366277Z Received 0 of 70227227 (0.0%), 0.0 MBs/sec
+2026-06-09T20:52:31.9407823Z Received 66032923 of 70227227 (94.0%), 31.5 MBs/sec
+2026-06-09T20:52:31.9771859Z Received 70227227 of 70227227 (100.0%), 32.8 MBs/sec
+2026-06-09T20:52:31.9773851Z Cache Size: ~67 MB (70227227 B)
+2026-06-09T20:52:31.9815296Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5d37638f-6f3e-450a-abec-122cdcdc0654/cache.tzst -P -C /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber --use-compress-program unzstd
+2026-06-09T20:52:33.2272812Z Cache restored successfully
+2026-06-09T20:52:33.2388399Z Cache restored from key: cache-trivy-2026-06-09
+2026-06-09T20:52:33.2494150Z ##[group]Run echo "$GITHUB_ACTION_PATH" >> $GITHUB_PATH
+2026-06-09T20:52:33.2494555Z [36;1mecho "$GITHUB_ACTION_PATH" >> $GITHUB_PATH[0m
+2026-06-09T20:52:33.2520675Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:33.2521039Z env:
+2026-06-09T20:52:33.2521378Z   GITHUB_ACTION_PATH: /home/runner/work/_actions/aquasecurity/trivy-action/master
+2026-06-09T20:52:33.2521785Z ##[endgroup]
+2026-06-09T20:52:33.2597529Z ##[group]Run rm -f trivy_envs.txt
+2026-06-09T20:52:33.2597830Z [36;1mrm -f trivy_envs.txt[0m
+2026-06-09T20:52:33.2598105Z [36;1mtouch trivy_envs.txt[0m
+2026-06-09T20:52:33.2621335Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:33.2621698Z ##[endgroup]
+2026-06-09T20:52:33.2704931Z ##[group]Run # Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.
+2026-06-09T20:52:33.2705803Z [36;1m# Note: There is currently no way to distinguish between undefined variables and empty strings in GitHub Actions.[0m
+2026-06-09T20:52:33.2706785Z [36;1m# This limitation affects how we handle default values and empty inputs.[0m
+2026-06-09T20:52:33.2707352Z [36;1m# For more information, see: https://github.com/actions/runner/issues/924[0m
+2026-06-09T20:52:33.2707757Z [36;1m[0m
+2026-06-09T20:52:33.2708120Z [36;1m# The following logic implements the configuration priority described in the README:[0m
+2026-06-09T20:52:33.2708588Z [36;1m#[0m
+2026-06-09T20:52:33.2708786Z [36;1m# Inputs[0m
+2026-06-09T20:52:33.2709012Z [36;1m# Environment Variables[0m
+2026-06-09T20:52:33.2709280Z [36;1m# Config File[0m
+2026-06-09T20:52:33.2709504Z [36;1m# Defaults[0m
+2026-06-09T20:52:33.2709719Z [36;1m#[0m
+2026-06-09T20:52:33.2710141Z [36;1m# As noted above defaults are awkward to handle as GitHub Actions will inject those values as the input[0m
+2026-06-09T20:52:33.2710826Z [36;1m# if the caller doesn't provide them, thus if the input matches the default we don't set it as we[0m
+2026-06-09T20:52:33.2711503Z [36;1m# can't tell the difference.  Plus if we did set it when it was the default value then it could potentially[0m
+2026-06-09T20:52:33.2712243Z [36;1m# override an external environment variable, or something in the callers configuration file, which then wouldn't[0m
+2026-06-09T20:52:33.2712841Z [36;1m# match the configuration priority that is documented.[0m
+2026-06-09T20:52:33.2713197Z [36;1mset_env_var_if_provided() {[0m
+2026-06-09T20:52:33.2713475Z [36;1m  local var_name="$1"[0m
+2026-06-09T20:52:33.2713736Z [36;1m  local input_value="$2"[0m
+2026-06-09T20:52:33.2714003Z [36;1m  local default_value="$3"[0m
+2026-06-09T20:52:33.2714256Z [36;1m[0m
+2026-06-09T20:52:33.2714565Z [36;1m  if [ -n "$input_value" ] && [ "$input_value" != "$default_value" ]; then[0m
+2026-06-09T20:52:33.2715246Z [36;1m    # If action was provided with explicit input by the caller set that[0m
+2026-06-09T20:52:33.2715780Z [36;1m    # Use printf %q to safely escape special characters and prevent command injection[0m
+2026-06-09T20:52:33.2716595Z [36;1m    printf 'export %s=%q\n' "$var_name" "$input_value" >> trivy_envs.txt[0m
+2026-06-09T20:52:33.2717002Z [36;1m  fi[0m
+2026-06-09T20:52:33.2717198Z [36;1m}[0m
+2026-06-09T20:52:33.2717551Z [36;1m[0m
+2026-06-09T20:52:33.2717850Z [36;1m# Set environment variables, handling those with default values[0m
+2026-06-09T20:52:33.2718437Z [36;1m# cf. https://aquasecurity.github.io/trivy/latest/docs/configuration/#environment-variables[0m
+2026-06-09T20:52:33.2718992Z [36;1mset_env_var_if_provided "TRIVY_INPUT" "$INPUT_INPUT" ""[0m
+2026-06-09T20:52:33.2719418Z [36;1mset_env_var_if_provided "TRIVY_EXIT_CODE" "$INPUT_EXIT_CODE" ""[0m
+2026-06-09T20:52:33.2719919Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_UNFIXED" "$INPUT_IGNORE_UNFIXED" "false"[0m
+2026-06-09T20:52:33.2720461Z [36;1mset_env_var_if_provided "TRIVY_PKG_TYPES" "$INPUT_VULN_TYPE" "os,library"[0m
+2026-06-09T20:52:33.2721047Z [36;1mset_env_var_if_provided "TRIVY_SEVERITY" "$INPUT_SEVERITY" "UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL"[0m
+2026-06-09T20:52:33.2721592Z [36;1mset_env_var_if_provided "TRIVY_FORMAT" "$INPUT_FORMAT" "table"[0m
+2026-06-09T20:52:33.2722039Z [36;1mset_env_var_if_provided "TRIVY_TEMPLATE" "$INPUT_TEMPLATE" ""[0m
+2026-06-09T20:52:33.2722478Z [36;1mset_env_var_if_provided "TRIVY_OUTPUT" "$INPUT_OUTPUT" ""[0m
+2026-06-09T20:52:33.2722914Z [36;1mset_env_var_if_provided "TRIVY_SKIP_DIRS" "$INPUT_SKIP_DIRS" ""[0m
+2026-06-09T20:52:33.2723371Z [36;1mset_env_var_if_provided "TRIVY_SKIP_FILES" "$INPUT_SKIP_FILES" ""[0m
+2026-06-09T20:52:33.2723842Z [36;1mset_env_var_if_provided "TRIVY_TIMEOUT" "$INPUT_TIMEOUT" ""[0m
+2026-06-09T20:52:33.2724301Z [36;1mset_env_var_if_provided "TRIVY_IGNORE_POLICY" "$INPUT_IGNORE_POLICY" ""[0m
+2026-06-09T20:52:33.2724785Z [36;1mset_env_var_if_provided "TRIVY_QUIET" "$INPUT_HIDE_PROGRESS" ""[0m
+2026-06-09T20:52:33.2725276Z [36;1mset_env_var_if_provided "TRIVY_LIST_ALL_PKGS" "$INPUT_LIST_ALL_PKGS" "false"[0m
+2026-06-09T20:52:33.2725759Z [36;1mset_env_var_if_provided "TRIVY_SCANNERS" "$INPUT_SCANNERS" ""[0m
+2026-06-09T20:52:33.2726203Z [36;1mset_env_var_if_provided "TRIVY_CONFIG" "$INPUT_TRIVY_CONFIG" ""[0m
+2026-06-09T20:52:33.2726905Z [36;1mset_env_var_if_provided "TRIVY_TF_VARS" "$INPUT_TF_VARS" ""[0m
+2026-06-09T20:52:33.2727371Z [36;1mset_env_var_if_provided "TRIVY_DOCKER_HOST" "$INPUT_DOCKER_HOST" ""[0m
+2026-06-09T20:52:33.2750322Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:33.2750679Z env:
+2026-06-09T20:52:33.2750877Z   INPUT_INPUT: 
+2026-06-09T20:52:33.2751164Z   INPUT_EXIT_CODE: 1
+2026-06-09T20:52:33.2751421Z   INPUT_IGNORE_UNFIXED: true
+2026-06-09T20:52:33.2751675Z   INPUT_VULN_TYPE: os,library
+2026-06-09T20:52:33.2751938Z   INPUT_SEVERITY: CRITICAL,HIGH
+2026-06-09T20:52:33.2752198Z   INPUT_FORMAT: table
+2026-06-09T20:52:33.2752417Z   INPUT_TEMPLATE: 
+2026-06-09T20:52:33.2752632Z   INPUT_OUTPUT: 
+2026-06-09T20:52:33.2752838Z   INPUT_SKIP_DIRS: 
+2026-06-09T20:52:33.2753051Z   INPUT_SKIP_FILES: 
+2026-06-09T20:52:33.2753270Z   INPUT_TIMEOUT: 
+2026-06-09T20:52:33.2753479Z   INPUT_IGNORE_POLICY: 
+2026-06-09T20:52:33.2753703Z   INPUT_HIDE_PROGRESS: 
+2026-06-09T20:52:33.2753932Z   INPUT_LIST_ALL_PKGS: false
+2026-06-09T20:52:33.2754174Z   INPUT_SCANNERS: 
+2026-06-09T20:52:33.2754381Z   INPUT_TRIVY_CONFIG: 
+2026-06-09T20:52:33.2754613Z   INPUT_TF_VARS: 
+2026-06-09T20:52:33.2754819Z   INPUT_DOCKER_HOST: 
+2026-06-09T20:52:33.2755029Z ##[endgroup]
+2026-06-09T20:52:33.2820225Z ##[group]Run entrypoint.sh
+2026-06-09T20:52:33.2820505Z [36;1mentrypoint.sh[0m
+2026-06-09T20:52:33.2843102Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:33.2843455Z env:
+2026-06-09T20:52:33.2843661Z   INPUT_SCAN_TYPE: image
+2026-06-09T20:52:33.2843918Z   INPUT_IMAGE_REF: space-debris:latest
+2026-06-09T20:52:33.2844350Z   INPUT_SCAN_REF: .
+2026-06-09T20:52:33.2844570Z   INPUT_TRIVYIGNORES: 
+2026-06-09T20:52:33.2844802Z   INPUT_GITHUB_PAT: 
+2026-06-09T20:52:33.2845033Z   INPUT_LIMIT_SEVERITIES_FOR_SARIF: 
+2026-06-09T20:52:33.2845524Z   TRIVY_CACHE_DIR: /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber/.cache/trivy
+2026-06-09T20:52:33.2846023Z ##[endgroup]
+2026-06-09T20:52:33.2908849Z Running Trivy with options: trivy image space-debris:latest
+2026-06-09T20:52:33.3449020Z 2026-06-09T20:52:33Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-06-09T20:52:33.3449827Z 2026-06-09T20:52:33Z	INFO	[secret] Secret scanning is enabled
+2026-06-09T20:52:33.3450787Z 2026-06-09T20:52:33Z	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-06-09T20:52:33.3451975Z 2026-06-09T20:52:33Z	INFO	[secret] Please see https://trivy.dev/docs/v0.71/guide/scanner/secret#recommendation for faster secret detection
+2026-06-09T20:52:40.5440556Z 2026-06-09T20:52:40Z	INFO	[python] Licenses acquired from one or more METADATA files may be subject to additional terms. Use `--debug` flag to see all affected packages.
+2026-06-09T20:52:40.5543462Z 2026-06-09T20:52:40Z	INFO	Detected OS	family="debian" version="13.5"
+2026-06-09T20:52:40.5544499Z 2026-06-09T20:52:40Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+2026-06-09T20:52:40.5647214Z 2026-06-09T20:52:40Z	INFO	Number of language-specific files	num=1
+2026-06-09T20:52:40.5649424Z 2026-06-09T20:52:40Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-06-09T20:52:40.5672076Z 2026-06-09T20:52:40Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.71/guide/scanner/vulnerability#severity-selection for details.
+2026-06-09T20:52:40.6375952Z 
+2026-06-09T20:52:40.6376583Z Report Summary
+2026-06-09T20:52:40.6376886Z 
+2026-06-09T20:52:40.6378119Z ┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┬─────────┐
+2026-06-09T20:52:40.6379765Z │                                      Target                                      │    Type    │ Vulnerabilities │ Secrets │
+2026-06-09T20:52:40.6380624Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6381703Z │ space-debris:latest (debian 13.5)                                                │   debian   │        0        │    -    │
+2026-06-09T20:52:40.6382614Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6383564Z │ usr/local/lib/python3.12/site-packages/astropy-5.3.4.dist-info/METADATA          │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6384577Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6385508Z │ usr/local/lib/python3.12/site-packages/blinker-1.9.0.dist-info/METADATA          │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6387539Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6389108Z │ usr/local/lib/python3.12/site-packages/certifi-2026.5.20.dist-info/METADATA      │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6390709Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6391978Z │ usr/local/lib/python3.12/site-packages/charset_normalizer-3.4.7.dist-info/METAD- │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6392757Z │ ATA                                                                              │            │                 │         │
+2026-06-09T20:52:40.6393429Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6394221Z │ usr/local/lib/python3.12/site-packages/click-8.4.1.dist-info/METADATA            │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6395072Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6395831Z │ usr/local/lib/python3.12/site-packages/flask-3.1.3.dist-info/METADATA            │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6396981Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6397739Z │ usr/local/lib/python3.12/site-packages/idna-3.18.dist-info/METADATA              │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6398546Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6399316Z │ usr/local/lib/python3.12/site-packages/itsdangerous-2.2.0.dist-info/METADATA     │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6400355Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6401106Z │ usr/local/lib/python3.12/site-packages/jinja2-3.1.6.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6401931Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6402677Z │ usr/local/lib/python3.12/site-packages/joblib-1.5.3.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6403485Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6404236Z │ usr/local/lib/python3.12/site-packages/markupsafe-3.0.3.dist-info/METADATA       │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6405116Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6405863Z │ usr/local/lib/python3.12/site-packages/numpy-1.26.4.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6406985Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6407913Z │ usr/local/lib/python3.12/site-packages/packaging-26.2.dist-info/METADATA         │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6408742Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6409500Z │ usr/local/lib/python3.12/site-packages/pandas-2.2.3.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6410295Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6411060Z │ usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA             │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6411848Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6412612Z │ usr/local/lib/python3.12/site-packages/pyerfa-2.0.1.5.dist-info/METADATA         │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6413412Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6414173Z │ usr/local/lib/python3.12/site-packages/python_dateutil-2.9.0.post0.dist-info/ME- │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6414888Z │ TADATA                                                                           │            │                 │         │
+2026-06-09T20:52:40.6415588Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6416885Z │ usr/local/lib/python3.12/site-packages/pytz-2026.2.dist-info/METADATA            │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6418024Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6418965Z │ usr/local/lib/python3.12/site-packages/pyyaml-6.0.3.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6419795Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6420551Z │ usr/local/lib/python3.12/site-packages/requests-2.33.0.dist-info/METADATA        │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6421357Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6422137Z │ usr/local/lib/python3.12/site-packages/scikit_learn-1.5.0.dist-info/METADATA     │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6422942Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6423702Z │ usr/local/lib/python3.12/site-packages/scipy-1.17.1.dist-info/METADATA           │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6424518Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6425279Z │ usr/local/lib/python3.12/site-packages/six-1.17.0.dist-info/METADATA             │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6426074Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6427133Z │ usr/local/lib/python3.12/site-packages/threadpoolctl-3.6.0.dist-info/METADATA    │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6428160Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6429405Z │ usr/local/lib/python3.12/site-packages/tzdata-2026.2.dist-info/METADATA          │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6431097Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6432561Z │ usr/local/lib/python3.12/site-packages/urllib3-2.7.0.dist-info/METADATA          │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6433429Z ├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┼─────────┤
+2026-06-09T20:52:40.6434197Z │ usr/local/lib/python3.12/site-packages/werkzeug-3.1.8.dist-info/METADATA         │ python-pkg │        0        │    -    │
+2026-06-09T20:52:40.6434999Z └──────────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┴─────────┘
+2026-06-09T20:52:40.6435432Z Legend:
+2026-06-09T20:52:40.6435625Z - '-': Not scanned
+2026-06-09T20:52:40.6435869Z - '0': Clean (no security findings detected)
+2026-06-09T20:52:40.6436077Z 
+2026-06-09T20:52:40.6460557Z ##[group]Run rm -f trivy_envs.txt
+2026-06-09T20:52:40.6460861Z [36;1mrm -f trivy_envs.txt[0m
+2026-06-09T20:52:40.6487156Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-06-09T20:52:40.6487518Z ##[endgroup]
+2026-06-09T20:52:40.6717335Z Post job cleanup.
+2026-06-09T20:52:40.6750555Z Post job cleanup.
+2026-06-09T20:52:40.8051184Z Cache hit occurred on the primary key cache-trivy-2026-06-09, not saving cache.
+2026-06-09T20:52:40.8246043Z Post job cleanup.
+2026-06-09T20:52:40.8306214Z Post job cleanup.
+2026-06-09T20:52:40.9281764Z [command]/usr/bin/git version
+2026-06-09T20:52:40.9318767Z git version 2.54.0
+2026-06-09T20:52:40.9361741Z Temporarily overriding HOME='/home/runner/work/_temp/c99d69f1-73d4-4e2e-a1ce-87593a72f4e3' before making global git config changes
+2026-06-09T20:52:40.9363444Z Adding repository directory to the temporary git global config as a safe directory
+2026-06-09T20:52:40.9374238Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/FIAP_GS_2026_TecEspacial_Cyber/FIAP_GS_2026_TecEspacial_Cyber
+2026-06-09T20:52:40.9414171Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-06-09T20:52:40.9454911Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-06-09T20:52:40.9703978Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-06-09T20:52:40.9730034Z http.https://github.com/.extraheader
+2026-06-09T20:52:40.9746822Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-06-09T20:52:40.9782035Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-06-09T20:52:41.0016288Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-06-09T20:52:41.0049200Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-06-09T20:52:41.0382348Z Cleaning up orphan processes
+2026-06-09T20:52:41.0690167Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4. Actions will be forced to run with Node.js 24 by default starting June 16th, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
