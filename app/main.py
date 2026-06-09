@@ -1,7 +1,7 @@
 import os
 from flask import Flask, jsonify
 
-NASA_API_KEY = "AKIAIOSFODNN7EXAMPLE1234567890AB"
+NASA_API_KEY = "ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ123456"
 
 app = Flask(__name__)
  
