@@ -1,8 +1,6 @@
 import os
 from flask import Flask, jsonify
 
-NASA_API_KEY = "ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZ123456"
-
 app = Flask(__name__)
  
 # Credencial injetada via variável de ambiente (NUNCA hardcoded)
