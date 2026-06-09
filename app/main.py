@@ -1,13 +1,12 @@
 import os
 from flask import Flask, jsonify
- 
+
+NASA_API_KEY = "nasa-secret-token-abc123XYZ"
+
 app = Flask(__name__)
  
 # Credencial injetada via variável de ambiente (NUNCA hardcoded)
-# NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
-
-# Credencial Hardcoded para simular o erro: 
-NASA_API_KEY = "nasa-secret-token-abc123XYZ"
+NASA_API_KEY = os.environ.get("NASA_API_KEY", "")
 
 @app.route("/health")
 def health():
